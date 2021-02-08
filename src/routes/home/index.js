@@ -32,13 +32,11 @@ const Home = () => {
 		navigator.geolocation.getCurrentPosition(position => {
 			setLat(position.coords.latitude);
 			setLong(position.coords.longitude);
+			console.log(`${position.coords.latitude}`);
+			console.log(`${position.coords.longitude}`);
 			axios({
 				method: 'GET',
 				url: `https://cdt-weather-backend.herokuapp.com/api/getForecast?lat=${position.coords.latitude}&long=${position.coords.longitude}`,
-				// headers: {
-				// 	'User-Agent': '(myweatherapp.com, contact@myweatherapp.com)',
-				// 	'Accepts': 'application/geo+json'
-				// }
 			}).then(response => {
 				setLoading(false);
 				setForecastData(response.data);
@@ -55,10 +53,6 @@ const Home = () => {
 		axios({
 			method: 'GET',
 			url: `https://cdt-weather-backend.herokuapp.com/api/getForecast?lat=${Number(e.target.value.split(',')[0])}&long=${Number(e.target.value.split(',')[1])}`,
-			// headers: {
-			// 	'User-Agent': '(myweatherapp.com, contact@myweatherapp.com)',
-			// 	'Accepts': 'application/geo+json'
-			// } 
 		}).then(response => {
 			setLoading(false);
 			setForecastData(response.data);
