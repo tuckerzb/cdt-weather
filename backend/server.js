@@ -40,5 +40,5 @@ app.use(morgan('combined'));
 const PORT = 5000;
 
 app.listen(PORT, () => (
-    console.log(`CORS-enabled Server listening on port ${PORT}`)
+    console.log(`Server listening on port ${PORT}`)
 ));
