@@ -34,7 +34,7 @@ const Home = () => {
 			setLong(position.coords.longitude);
 			axios({
 				method: 'GET',
-				url: `http://localhost:5000/getForecast?lat=${position.coords.latitude}&long=${position.coords.longitude}`,
+				url: `/api/getForecast?lat=${position.coords.latitude}&long=${position.coords.longitude}`,
 				// headers: {
 				// 	'User-Agent': '(myweatherapp.com, contact@myweatherapp.com)',
 				// 	'Accepts': 'application/geo+json'
@@ -54,7 +54,7 @@ const Home = () => {
 		setLong(Number(e.target.value.split(',')[1]));
 		axios({
 			method: 'GET',
-			url: `http://localhost:5000/getForecast?lat=${Number(e.target.value.split(',')[0])}&long=${Number(e.target.value.split(',')[1])}`,
+			url: `/api/getForecast?lat=${Number(e.target.value.split(',')[0])}&long=${Number(e.target.value.split(',')[1])}`,
 			// headers: {
 			// 	'User-Agent': '(myweatherapp.com, contact@myweatherapp.com)',
 			// 	'Accepts': 'application/geo+json'
