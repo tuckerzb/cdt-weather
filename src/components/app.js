@@ -2,6 +2,7 @@ import { h } from 'preact';
 import { Router } from 'preact-router';
 
 import Header from './header';
+import Footer from './footer';
 
 // Code-splitting is automated for `routes` directory
 import Home from '../routes/home';
@@ -16,6 +17,7 @@ const App = () => (
 			<About path="/about" />
 			<Contact path="/contact" />
 		</Router>
+		<Footer />
 	</div>
 )
 

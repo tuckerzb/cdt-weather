@@ -9,6 +9,7 @@
 	padding-left: 1rem;
 	padding-bottom: .25rem;
 	padding-top: .25rem;
+	padding-right: 1rem;
 
 	margin: 1rem 0;
 }
@@ -18,13 +19,13 @@
 }
 
 .locationButton {
-	width: 15%;
+	width: auto;
 	font-size: 1rem;
 	background-color: #5CDB95;
 	font-weight: 700;
 	border: 0;
 	border-radius: 5px;
-	padding: 5px 0;
+	padding: 5px 5px;
 	cursor: pointer;
 }
 
