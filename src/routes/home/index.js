@@ -77,8 +77,8 @@ const Home = () => {
 		<select value={selectValue} name='landmark' id='landmark' onChange={getForecastFromLandmark}>
 			<option value="">-- Select a Landmark --</option>
 			<option value="nm">-- New Mexico --</option>
-			<option value="31.497049,-108.208488">Crazy Cook Monument (Terminus)</option>
-			<option value="32.346939,-108.707222">Lordsburg, NM</option>
+			<option value="EPZ,32,49">Crazy Cook Monument (Terminus)</option>
+			<option value="EPZ,19,88">Lordsburg, NM</option>
 		</select>
 		{loading && (<><br /><Loader /></>)}
 		<div class={style.forecastBlock}>
