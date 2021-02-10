@@ -73,8 +73,23 @@ const Home = () => {
 		<select value={selectValue} name='landmark' id='landmark' onChange={getForecastFromLandmark}>
 			<option value="">-- Select a Landmark --</option>
 			<option value="nm">-- New Mexico --</option>
-			<option value="EPZ,32,49,31.501572,-108.243512">Crazy Cook Monument (Terminus)</option>
-			<option value="EPZ,19,88,32.346898,-108.7375863">Lordsburg, NM</option>
+			<option value="EPZ,33,49,31.4977299,-108.2145227">Crazy Cook Monument (Terminus)</option>
+			<option value="EPZ,19,88,32.3480219,-108.7078031">Lordsburg, NM</option>
+			<option value="EPZ,37,106,32.778061,-108.274170">Silver City, NM</option>
+			<option value="ABQ,25,65,33.742050,-108.477402">North End of Gila Alternate</option>
+			<option value="ABQ,28,73,33.932659,-108.418900">Highway 12</option>
+			<option value="ABQ,40,88,34.298328,-108.134720">Pie Town, NM</option>
+			<option value="ABQ,54,125,35.155281,-107.842216">Grants, NM</option>
+			<option value="ABQ,63,128,35.238819,-107.608459">Mt Taylor Summit</option>
+			<option value="ABQ,90,160,36.014848,-106.963901">Cuba, NM</option>
+			<option value="ABQ,99,168,36.203552,-106.719933">Highway 96</option>
+			<option value="ABQ,103,173,36.329578,-106.624100">South End of Ghost Ranch Alternate</option>
+			<option value="ABQ,108,176,36.401878,-106.494713">Highway 84</option>
+			<option value="ABQ,119,189,36.709910,-106.230072">Highway 64</option>
+			<option value="PUB,25,12,36.993870,-106.457108">NM/CO BORDER</option>
+			<option value="co">-- Colorado --</option>
+
+
 		</select>
 		{loading && (<><br /><Loader /></>)}
 		<div class={style.forecastBlock}>
