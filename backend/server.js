@@ -11,10 +11,10 @@ app.use(morgan('combined'));
 
 
     app.get('/api/', (req, res) => {
-        res.send('API is running - CDT Weather - CORS enabled');
+        res.send('API is running - CDT Weather');
     });
 
-    app.get('/api/getForecast', (req, res) => {
+    app.get('/api/getForecastFromLocation', (req, res) => {
         axios({
             method: 'GET',
             url: `https://api.weather.gov/points/${req.query.lat},${req.query.long}`,
@@ -33,6 +33,22 @@ app.use(morgan('combined'));
             }).then(response => {
                 res.status(200).json(response.data.properties.periods);
             }, error => console.log(error));
+        }, error => console.log(error));
+    })
+
+    app.get('/api/getForecastFromLandmark', (req, res) => {
+        const gridID = req.query.id.split(',')[0];
+        const gridX = req.query.id.split(',')[1];
+        const gridY = req.query.id.split(',')[2];
+        axios({
+            method: 'GET',
+            url: `https://api.weather.gov/gridpoints/${gridID}/${gridX},${gridY}/forecast`,
+            headers: {
+                'User-Agent': '(myweatherapp.com, contact@myweatherapp.com)',
+                'Accept': 'application/geo+json'
+            }
+        }).then(response => {
+            res.status(200).json(response.data.properties.periods);
         }, error => console.log(error));
     })
 

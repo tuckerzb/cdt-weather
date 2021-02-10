@@ -36,7 +36,7 @@ const Home = () => {
 			console.log(`${position.coords.longitude}`);
 			axios({
 				method: 'GET',
-				url: `https://cdt-weather-backend.herokuapp.com/api/getForecast?lat=${position.coords.latitude}&long=${position.coords.longitude}`,
+				url: `https://cdt-weather-backend.herokuapp.com/api/getForecastFromLocation?lat=${position.coords.latitude}&long=${position.coords.longitude}`,
 			}).then(response => {
 				setLoading(false);
 				setForecastData(response.data);
@@ -52,7 +52,7 @@ const Home = () => {
 		setLong(Number(e.target.value.split(',')[1]));
 		axios({
 			method: 'GET',
-			url: `https://cdt-weather-backend.herokuapp.com/api/getForecast?lat=${Number(e.target.value.split(',')[0])}&long=${Number(e.target.value.split(',')[1])}`,
+			url: `https://cdt-weather-backend.herokuapp.com/api/getForecastFromLandmark?id=${e.target.value}`,
 		}).then(response => {
 			setLoading(false);
 			setForecastData(response.data);
