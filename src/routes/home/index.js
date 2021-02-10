@@ -48,8 +48,8 @@ const Home = () => {
 		setLoading(true);
 		setForecastData([]);
 		setSelectValue(e.target.value);
-		setLat(Number(e.target.value.split(',')[0]));
-		setLong(Number(e.target.value.split(',')[1]));
+		setLat(Number(e.target.value.split(',')[3]));
+		setLong(Number(e.target.value.split(',')[4]));
 		axios({
 			method: 'GET',
 			url: `https://cdt-weather-backend.herokuapp.com/api/getForecastFromLandmark?id=${e.target.value}`,
@@ -60,11 +60,7 @@ const Home = () => {
 	}
 
 	useEffect(() => {
-		// console.log(`Latitude: ${lat}`);
-		// console.log(`Longitude: ${long}`);
-		// if (forecastURL && forecastData.length === 0) {
-		// 	getForecast();
-		// }
+
 	}, [forecastData]);
 	
 	return (<div class={style.container}>
@@ -77,8 +73,8 @@ const Home = () => {
 		<select value={selectValue} name='landmark' id='landmark' onChange={getForecastFromLandmark}>
 			<option value="">-- Select a Landmark --</option>
 			<option value="nm">-- New Mexico --</option>
-			<option value="EPZ,32,49">Crazy Cook Monument (Terminus)</option>
-			<option value="EPZ,19,88">Lordsburg, NM</option>
+			<option value="EPZ,32,49,31.501572,-108.243512">Crazy Cook Monument (Terminus)</option>
+			<option value="EPZ,19,88,32.346898,-108.7375863">Lordsburg, NM</option>
 		</select>
 		{loading && (<><br /><Loader /></>)}
 		<div class={style.forecastBlock}>
