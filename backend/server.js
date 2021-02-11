@@ -14,6 +14,24 @@ app.use(morgan('combined'));
         res.send('API is running - CDT Weather');
     });
 
+    app.get('/api/getSelectFormat', (req, res) => {
+        axios({
+            method: 'GET',
+            url: `https://api.weather.gov/points/${req.query.coord.split(',')[0]},${req.query.coord.split(',')[1]}`,
+            headers: {
+                'User-Agent': '(myweatherapp.com, contact@myweatherapp.com)',
+                'Accept': 'application/geo+json'
+            }
+        }).then(response => {
+            const gridID = response.data.properties.gridId;
+            const gridX = response.data.properties.gridX;
+            const gridY = response.data.properties.gridY;
+            res.status(200).json({
+                result: `<option value='${gridID},${gridX},${gridY},${req.query.coord.split(',')[0]},${req.query.coord.split(',')[1]}'></option>`
+            });
+        }, error => res.json(error));
+    })
+
     app.get('/api/getForecastFromLocation', (req, res) => {
         axios({
             method: 'GET',

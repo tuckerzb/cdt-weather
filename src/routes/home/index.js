@@ -76,20 +76,41 @@ const Home = () => {
 			<option value="EPZ,33,49,31.4977299,-108.2145227">Crazy Cook Monument (Terminus)</option>
 			<option value="EPZ,19,88,32.3480219,-108.7078031">Lordsburg, NM</option>
 			<option value="EPZ,37,106,32.778061,-108.274170">Silver City, NM</option>
-			<option value="ABQ,25,65,33.742050,-108.477402">North End of Gila Alternate</option>
+			<option value="ABQ,25,65,33.742050,-108.477402">N End of Gila Alt</option>
 			<option value="ABQ,28,73,33.932659,-108.418900">Highway 12</option>
 			<option value="ABQ,40,88,34.298328,-108.134720">Pie Town, NM</option>
 			<option value="ABQ,54,125,35.155281,-107.842216">Grants, NM</option>
 			<option value="ABQ,63,128,35.238819,-107.608459">Mt Taylor Summit</option>
 			<option value="ABQ,90,160,36.014848,-106.963901">Cuba, NM</option>
 			<option value="ABQ,99,168,36.203552,-106.719933">Highway 96</option>
-			<option value="ABQ,103,173,36.329578,-106.624100">South End of Ghost Ranch Alternate</option>
+			<option value="ABQ,103,173,36.329578,-106.624100">S End of Ghost Ranch Alt</option>
 			<option value="ABQ,108,176,36.401878,-106.494713">Highway 84</option>
 			<option value="ABQ,119,189,36.709910,-106.230072">Highway 64</option>
 			<option value="PUB,25,12,36.993870,-106.457108">NM/CO BORDER</option>
 			<option value="co">-- Colorado --</option>
-
-
+			<option value='PUB,25,13,37.018021,-106.450204'>Cumbres Pass/S End of Great Divide Alt</option>
+			<option value='PUB,21,43,37.670368,-106.642975'>South Fork, CO</option>
+			<option value='PUB,31,43,37.678692,-106.351883'>Del Norte, CO</option>
+			<option value='PUB,14,35,37.482979,-106.802231'>Wolf Creek Pass/Highway 160</option>
+			<option value='PUB,11,39,37.564049,-106.906403'>S End of Creede Cutoff</option>
+			<option value='PUB,11,52,37.849442,-106.926109'>Creede, CO</option>
+			<option value='GJT,138,46,37.940151,-107.158997'>Spring Creek Pass/Highway 149</option>
+			<option value='PUB,23,65,38.161350,-106.620598'>N End of Great Divide Alt</option>
+			<option value='GJT,170,68,38.496201,-106.324982'>Monarch Pass/Highway 50</option>
+			<option value='PUB,33,88,38.692551,-106.414619'>S End of Mirror Lake Alt</option>
+			<option value='PUB,33,94,38.827892,-106.408859'>Cottonwood Pass/Highway 306</option>
+			<option value='GJT,168,85,38.873100,-106.426666'>N End of Mirror Lake Alt</option>
+			<option value='PUB,36,106,39.093449,-106.364349'>Twin Lakes, CO / Highway 82</option>
+			<option value='GJT,174,107,39.363300,-106.311920'>Tennessee Pass / Highway 24</option>
+			<option value='BOU,21,53,39.498650,-106.155998'>Copper Mtn / S End of Silverthorne Alt</option>
+			<option value='BOU,32,55,39.574902,-105.837273'>S End of Argentine Spine Alt</option>
+			<option value='BOU,33,58,39.633781,-105.817551'>Grays Peak Summit</option>
+			<option value='BOU,35,65,39.798222,-105.776947'>Berthoud Pass / Highway 40</option>
+			<option value='BOU,35,86,40.256279,-105.815880'>Grand Lake, CO / S End of RMNP Bypass</option>
+			<option value='BOU,26,91,40.349628,-106.089729'>Willow Creek Pass / Highway 125</option>
+			<option value='BOU,9,94,40.380070,-106.579330'>Muddy Pass / Highway 40+14</option>
+			<option value='GJT,164,171,40.753529,-106.732483'>North Lake Trailhead</option>
+			<option value='CYS,38,12,41.002628,-106.861267'>CO/WY BORDER</option>
 		</select>
 		{loading && (<><br /><Loader /></>)}
 		<div class={style.forecastBlock}>

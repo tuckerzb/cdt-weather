@@ -8,6 +8,7 @@ import Footer from './footer';
 import Home from '../routes/home';
 import About from '../routes/about';
 import Contact from '../routes/contact';
+import Tools from '../routes/tools'
 
 const App = () => (
 	<div id="app">
@@ -16,6 +17,7 @@ const App = () => (
 			<Home path="/" />
 			<About path="/about" />
 			<Contact path="/contact" />
+			<Tools path='/tools' />
 		</Router>
 		<Footer />
 	</div>
