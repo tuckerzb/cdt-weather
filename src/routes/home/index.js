@@ -111,6 +111,26 @@ const Home = () => {
 			<option value='BOU,9,94,40.380070,-106.579330'>Muddy Pass / Highway 40+14</option>
 			<option value='GJT,164,171,40.753529,-106.732483'>North Lake Trailhead</option>
 			<option value='CYS,38,12,41.002628,-106.861267'>CO/WY BORDER</option>
+			<option value="wy">-- Wyoming --</option>
+			<option value='CYS,34,19,41.153728,-106.981300'>Battle Pass / Highway 70</option>
+			<option value='CYS,21,39,41.550819,-107.431381'>Bridger Pass</option>
+			<option value='CYS,28,49,41.786896,-107.240479'>Rawlings, WY</option>
+			<option value='RIW,100,84,42.462212,-108.851097'>Highway 28</option>
+			<option value='RIW,91,92,42.621719,-109.131660'>S End of Cirque of the Towers Alt</option>
+			<option value='RIW,86,101,42.795158,-109.302277'>N End of Cirque of the Towers Alt</option>
+			<option value='RIW,76,115,43.070950,-109.645844'>S End of Knapsack Col Alt</option>
+			<option value='RIW,76,119,43.154579,-109.661011'>Knapsack Col</option>
+			<option value='RIW,73,120,43.169121,-109.741837'>N End of Knapsack Col Alt</option>
+			<option value='RIW,70,130,43.385201,-109.854523'>Gunsight Pass</option>
+			<option value='RIW,66,142,43.621899,-110.035011'>Sheridan Pass / S End of Old CDT Alt</option>
+			<option value='RIW,67,146,43.718319,-110.012199'>Highway 26 on Old CDT Alt</option>
+			<option value='RIW,59,166,44.133129,-110.300362'>S End of Yellowstone NP</option>
+			<option value='RIW,50,176,44.317005,-110.598892'>Highway 191 (S Crossing)</option>
+			<option value='RIW,44,183,44.460178,-110.830093'>Old Faithful Village</option>
+			<option value='RIW,36,182,44.408089,-111.051872'>WY/ID BORDER</option>
+			<option value="id">-- Idaho --</option>
+
+
 		</select>
 		{loading && (<><br /><Loader /></>)}
 		<div class={style.forecastBlock}>
