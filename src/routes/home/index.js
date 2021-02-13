@@ -129,6 +129,35 @@ const Home = () => {
 			<option value='RIW,44,183,44.460178,-110.830093'>Old Faithful Village</option>
 			<option value='RIW,36,182,44.408089,-111.051872'>WY/ID BORDER</option>
 			<option value="id">-- Idaho --</option>
+			<option value='PIH,151,113,44.437531,-111.105148'>S End of Mack's Inn Alt</option>
+			<option value='TFX,82,11,44.674252,-111.273819'>Highway 20</option>
+			<option value='TFX,73,7,44.561489,-111.541199'>N End of Mack's Inn Alt</option>
+			<option value='PIH,114,122,44.520809,-112.256630'>Interstate 15</option>
+			<option value='MSO,118,28,44.759739,-113.137642'>Summit of Elk Mountain</option>
+			<option value='TFX,1,70,45.694073,-113.934616'>Gordon Reese Cabin (Final ID/MT Crossing)</option>
+			<option value="mt">-- Montana --</option>
+			<option value='MSO,122,88,46.048569,-113.280518'>S End of Anaconda Alt</option>
+			<option value='MSO,127,82,45.927181,-113.099991'>Highway 569</option>
+			<option value='MSO,140,76,45.852829,-112.675621'>Interstate 15 (S of Butte)</option>
+			<option value='TFX,52,73,45.919300,-112.411942'>Interstate 90</option>
+			<option value='MSO,146,93,46.208359,-112.575958'>N End of Anaconda Alt</option>
+			<option value='MSO,156,108,46.561451,-112.308746'>Highway 12</option>
+			<option value='TFX,55,119,46.891102,-112.495796'>Stemple Pass / High Divide Outfitters</option>
+			<option value='TFX,60,127,47.073891,-112.371582'>Rogers Pass / Highway 200</option>
+			<option value='TFX,46,150,47.506519,-112.891151'>S End of Bob Marshall Wilderness</option>
+			<option value='TFX,41,162,47.741379,-113.119751'>S End of Spotted Bear Alt</option>
+			<option value='MSO,141,179,48.000980,-113.052994'>N End of Spotted Bear Alt</option>
+			<option value='TFX,37,191,48.318638,-113.353012'>Marias Pass / Highway 2</option>
+			<option value='TFX,41,196,48.437866,-113.258621'>S End of Glacier NP</option>
+			<option value='TFX,38,199,48.486401,-113.365898'>Two Medicine</option>
+			<option value='TFX,34,203,48.574291,-113.513641'>Triple Divide Pass</option>
+			<option value='TFX,30,209,48.677525,-113.652069'>Going to the Sun Road</option>
+			<option value='TFX,31,215,48.800129,-113.656952'>Waterton / Chief Mtn Junction</option>
+			<option value='TFX,30,218,48.863079,-113.688377'>(CM) Red Gap Pass</option>
+			<option value='TFX,32,224,48.997504,-113.660635'>(CM) Canadian Border (Terminus)</option>
+			<option value='TFX,24,218,48.852879,-113.860901'>(W) Fifty Mountain Campsite</option>
+			<option value='TFX,24,225,48.998512,-113.906087'>(W) Canadian Border (Terminus)</option>
+
 
 
 		</select>
