@@ -2,12 +2,16 @@ import express from 'express';
 import cors from 'cors';
 import axios from 'axios';
 import morgan from 'morgan';
+import dotenv from 'dotenv';
+import nodemailer from 'nodemailer';
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 app.use(morgan('combined'));
+
+dotenv.config();
 
 
     app.get('/api/', (req, res) => {
@@ -68,6 +72,36 @@ app.use(morgan('combined'));
         }).then(response => {
             res.status(200).json(response.data.properties.periods);
         }, error => console.log(error));
+    })
+
+    app.post('/api/sendMessage', (req, res) => {
+        const {name, email, message} = req.body;
+        //res.send({name, email, message});
+            const transporter = nodemailer.createTransport({
+              host: process.env.SMTP_HOST,
+              port: process.env.SMTP_PORT,
+              secure: true,
+              auth: {
+                user: process.env.SMTP_USER,
+                pass: process.env.SMTP_PASS
+              }
+            });
+            try {
+            const info = transporter.sendMail({
+              from: process.env.SMTP_USERNAME,
+              to: 'zbtucker@gmail.com',
+              subject: "CDT Weather Contact Form Submission",
+              html: `A new message has been sent from CDT Weather:<br />
+              Sender Name: ${name}<br />
+              Sender Email: ${email}<br /><br />
+              Message: ${message}<br />`
+            });
+            res.send({message: 'Message Sent!'});
+          
+          } catch (error) {
+            res.send(error);
+          }
+
     })
 
 
