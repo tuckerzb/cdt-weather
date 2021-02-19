@@ -70,7 +70,8 @@ dotenv.config();
                 'Accept': 'application/geo+json'
             }
         }).then(response => {
-            if (Number(response.data.status) >= 500) {
+            console.log(response);
+            if (response.response.status >= 500) {
                 res.json({message: 'We are currently experiencing an issue communicating with the National Weather Service service. Please try again later'});
             } else {
                 res.status(200).json(response.data.properties.periods);
