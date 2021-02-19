@@ -31,6 +31,19 @@
 	margin: 1rem 0;
 }
 
+.errorBlock {
+	background-color: lightsalmon;
+	border-radius: 5px;
+	padding-left: 1rem;
+	padding-bottom: .25rem;
+	padding-top: .25rem;
+	padding-right: 1rem;
+	color: #000;
+	font-weight: 700;;
+
+	margin: 1rem 0;
+}
+
 input[type=text], input[type=email], textarea {
 	width: 100%; /* Full width */
 	padding: 12px; /* Some padding */ 

@@ -9,9 +9,17 @@ const Contact = () => {
 	const [email, setEmail] = useState('');
 	const [message, setMessage] = useState('');
 	const [response, setResponse] = useState('');
+	const [botCheck, setBotCheck] = useState('');
+	const [error, setError] = useState('');
 
 	const sendMessage = (e) => {
 		e.preventDefault();
+		setError('');
+		setResponse('');
+		if (botCheck !== 'canada') {
+			setError('You did not pass the bot check test! Please select the country that holds a CDT terminus.');
+			return;
+		}
 		console.log(`Sending Message`);
 		axios({
 			method: 'POST',
@@ -33,6 +41,7 @@ const Contact = () => {
 			<p>Please note that Zach is likely on trail, and responses may be delayed.</p>
 		</div>
 		{response && <div class={style.messageBlock}>{response}</div>}
+		{response && <div class={style.errorBlock}>{response}</div>}
 		<div class={style.formContainer}>
 			<div>
 				<label for='name'>Your Name:</label>
@@ -45,6 +54,16 @@ const Contact = () => {
 			<div>
 				<label for='name'>Your Message:</label>
 				<textarea id='message' value={message} rows={5} onChange={(e) => setMessage(e.target.value)} />
+			</div>
+			<div>
+				<label for='botcheck'>Bot Check: Select the CDT Terminus Country</label>
+				<select id='botcheck' onChange={(e) => setBotCheck(e.target.value)}>
+					<option value=''>Please Select</option>
+					<option value='costarica'>Costa Rica</option>
+					<option value='russia'>Russia</option>
+					<option value='canada'>Canada</option>
+					<option value='france'>France</option>
+				</select>
 			</div>
 			<button type='submit' onClick={sendMessage}>Send Message</button>
 		</div>
