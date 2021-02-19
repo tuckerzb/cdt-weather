@@ -10,7 +10,8 @@ const Contact = () => {
 	const [message, setMessage] = useState('');
 	const [response, setResponse] = useState('');
 
-	const sendMessage = () => {
+	const sendMessage = (e) => {
+		e.preventDefault();
 		console.log(`Sending Message`);
 		axios({
 			method: 'POST',
@@ -32,7 +33,7 @@ const Contact = () => {
 			<p>Please note that Zach is likely on trail, and responses may be delayed.</p>
 		</div>
 		{response && <div class={style.messageBlock}>{response}</div>}
-		<div>
+		<div class={style.formContainer}>
 			<div>
 				<label for='name'>Your Name:</label>
 				<input type='text' id='name' value={name} onChange={(e) => setName(e.target.value)} />
@@ -43,9 +44,9 @@ const Contact = () => {
 			</div>
 			<div>
 				<label for='name'>Your Message:</label>
-				<textarea id='message' value={message} onChange={(e) => setMessage(e.target.value)} />
+				<textarea id='message' value={message} rows={5} onChange={(e) => setMessage(e.target.value)} />
 			</div>
-			<button onClick={sendMessage}>Send Message</button>
+			<button type='submit' onClick={sendMessage}>Send Message</button>
 		</div>
 	</div>);
 };
