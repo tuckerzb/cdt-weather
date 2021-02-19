@@ -24,6 +24,7 @@
 .header nav {
 	float: right;
 	font-size: 100%;
+	padding-right: 15px;
 }
 
 .header nav a {
@@ -52,5 +53,8 @@
 	/* For mobile phones: */
 	.header h1 {
 		font-size: 1.25em;
+	}
+	.header nav {
+		padding-right: 0;
 	}
   }
