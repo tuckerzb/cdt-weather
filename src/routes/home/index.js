@@ -60,7 +60,7 @@ const Home = () => {
 		setForecastData([]);
 		setSelectValue(e.target.value);
 		if (e.target.value.length == 2 || e.target.value.length == 0) {
-			setError('Please select a landmark.');
+			setError('You have selected one of the state category dividers, please select a landmark instead.');
 			setLoading(false);
 			return;
 		}
