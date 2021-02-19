@@ -14,7 +14,7 @@ const App = () => (
 	<div id="app">
 		<Header />
 		<Router>
-			<Home path="/" />
+			<Home path="/" exact />
 			<About path="/about" />
 			<Contact path="/contact" />
 			<Tools path='/tools' />

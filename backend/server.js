@@ -70,25 +70,26 @@ dotenv.config();
                 'Accept': 'application/geo+json'
             }
         }).then(response => {
-            res.status(200).json(response.data.properties.periods);
+            if (Number(response.data.status) >= 500) {
+                res.json({message: 'We are currently experiencing an issue communicating with the National Weather Service service. Please try again later'});
+            } else {
+                res.status(200).json(response.data.properties.periods);
+            }
         }, error => console.log(error));
     })
 
     app.post('/api/sendMessage', (req, res) => {
         const {name, email, message} = req.body;
         //res.send({name, email, message});
-            const transporter = nodemailer.createTransport({
-              host: process.env.SMTP_HOST,
-              port: process.env.SMTP_PORT,
-              secure: true,
-              auth: {
+        const transporter = nodemailer.createTransport({
+            service: 'SendinBlue', // no need to set host or port etc.
+            auth: {
                 user: process.env.SMTP_USER,
                 pass: process.env.SMTP_PASS
-              }
-            });
-            try {
+            }
+       });
             const info = transporter.sendMail({
-              from: process.env.SMTP_USERNAME,
+              from: process.env.SMTP_USER,
               to: 'zbtucker@gmail.com',
               subject: "CDT Weather Contact Form Submission",
               html: `A new message has been sent from CDT Weather:<br />
@@ -97,10 +98,6 @@ dotenv.config();
               Message: ${message}<br />`
             });
             res.send({message: 'Message Sent!'});
-          
-          } catch (error) {
-            res.send(error);
-          }
 
     })
 

@@ -8,19 +8,20 @@ const Contact = () => {
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [message, setMessage] = useState('');
+	const [response, setResponse] = useState('');
 
 	const sendMessage = () => {
 		console.log(`Sending Message`);
 		axios({
 			method: 'POST',
-			url: `http://localhost:5000/api/sendMessage`,
+			url: `https://cdt-weather-backend.herokuapp.com/api/sendMessage`,
 			data: {
 				name,
 				email,
 				message
 			}
-		}).then(response => {
-			console.log(response);
+		}).then(resp => {
+			setResponse(resp.data.message);
 		}, error => console.log(error));
 	}
 	
@@ -28,7 +29,9 @@ const Contact = () => {
 		<div class={style.headerBlock}>
 			<h1>Contact</h1>
 			<p>Please use the below form to submit comments, suggestions, and concerns.</p>
+			<p>Please note that Zach is likely on trail, and responses may be delayed.</p>
 		</div>
+		{response && <div class={style.messageBlock}>{response}</div>}
 		<div>
 			<div>
 				<label for='name'>Your Name:</label>
@@ -36,7 +39,7 @@ const Contact = () => {
 			</div>
 			<div>
 				<label for='name'>Your Email:</label>
-				<input type='text' id='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+				<input type='email' id='email' value={email} onChange={(e) => setEmail(e.target.value)} />
 			</div>
 			<div>
 				<label for='name'>Your Message:</label>

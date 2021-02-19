@@ -24,6 +24,7 @@ const Home = () => {
 	const [forecastData, setForecastData] = useState([]);
 	const [selectValue, setSelectValue] = useState('');
 	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState('');
 
 	const getLocationHandler = () => {
 		setSelectValue('');
@@ -54,8 +55,12 @@ const Home = () => {
 			method: 'GET',
 			url: `https://cdt-weather-backend.herokuapp.com/api/getForecastFromLandmark?id=${e.target.value}`,
 		}).then(response => {
-			setLoading(false);
-			setForecastData(response.data);
+			if (response.data.message) {
+				setError(response.data.message);
+			} else {
+				setLoading(false);
+				setForecastData(response.data);	
+			}
 		}, error => console.log(error));
 	}
 
