@@ -12,12 +12,20 @@ const Contact = () => {
 	const [botCheck, setBotCheck] = useState('');
 	const [error, setError] = useState('');
 
+	const validateEmail = (toTest) => {
+		const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    	return regex.test(toTest.toLowerCase());
+	}
+
 	const sendMessage = (e) => {
 		e.preventDefault();
 		setError('');
 		setResponse('');
 		if (botCheck !== 'canada') {
 			setError('You did not pass the bot check test! Please select the country that holds a CDT terminus.');
+			return;
+		} else if (!email || !validateEmail(email)) {
+			setError('Please enter a valid email address so I know where to send my reply!')
 			return;
 		}
 		console.log(`Sending Message`);
@@ -41,7 +49,7 @@ const Contact = () => {
 			<p>Please note that Zach is likely on trail, and responses may be delayed.</p>
 		</div>
 		{response && <div class={style.messageBlock}>{response}</div>}
-		{response && <div class={style.errorBlock}>{response}</div>}
+		{error && <div class={style.errorBlock}>{error}</div>}
 		<div class={style.formContainer}>
 			<div>
 				<label for='name'>Your Name:</label>
@@ -56,8 +64,8 @@ const Contact = () => {
 				<textarea id='message' value={message} rows={5} onChange={(e) => setMessage(e.target.value)} />
 			</div>
 			<div>
-				<label for='botcheck'>Bot Check: Select the CDT Terminus Country</label>
-				<select id='botcheck' onChange={(e) => setBotCheck(e.target.value)}>
+				<label for='botcheck'><strong>Bot Check: Select the CDT Terminus Country</strong></label>
+				<select value={botCheck} id='botcheck' onChange={(e) => setBotCheck(e.target.value)}>
 					<option value=''>Please Select</option>
 					<option value='costarica'>Costa Rica</option>
 					<option value='russia'>Russia</option>

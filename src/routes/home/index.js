@@ -48,7 +48,10 @@ const Home = () => {
 					setForecastData(response.data);	
 				}
 			}, error => console.log(error));
-		}, error => console.log(error));
+		}, error => {
+			setError('We could not determine your location via GPS. Please use the landmark dropdown to select the nearest location to you.');
+			setLoading(false);
+		});
 	}
 
 	const getForecastFromLandmark = (e) => {
@@ -56,6 +59,11 @@ const Home = () => {
 		setError('');
 		setForecastData([]);
 		setSelectValue(e.target.value);
+		if (e.target.value.length == 2 || e.target.value.length == 0) {
+			setError('Please select a landmark.');
+			setLoading(false);
+			return;
+		}
 		setLat(Number(e.target.value.split(',')[3]));
 		setLong(Number(e.target.value.split(',')[4]));
 		axios({
@@ -79,7 +87,7 @@ const Home = () => {
 	return (<div class={style.container}>
 		<div class={style.headerBlock}>
 		<h1>Welcome to CDT Weather</h1>
-		<p>The <a href='https://continentaldividetrail.org/'>Continental Divide National Scenic Trail</a> is a 2,700+ mile path through the Rocky Mountains and along the Continental Divide. </p>
+		<p>The <a href='https://continentaldividetrail.org/'>Continental Divide Trail</a> is a 2,700+ mile path through the Rocky Mountains and along the Continental Divide. </p>
 		<p>To get the 7-day National Weather Service forecast, click "Get My Location" or select the closest landmark to you from the dropdown.</p>
 		</div>
 		<button class={style.locationButton} onClick={getLocationHandler}>Get My Location</button> <strong>OR</strong>{' '}
