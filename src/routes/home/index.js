@@ -57,6 +57,7 @@ const Home = () => {
 		}).then(response => {
 			if (response.data.message) {
 				setError(response.data.message);
+				setLoading(false);
 			} else {
 				setLoading(false);
 				setForecastData(response.data);	
@@ -166,6 +167,7 @@ const Home = () => {
 
 
 		</select>
+		{error && <div>{error}</div>}
 		{loading && (<><br /><Loader /></>)}
 		<div class={style.forecastBlock}>
 		{forecastData.length !== 0 && (<div class={style.forecastFor}><strong>Forecast For:</strong> {lat.toFixed(4)}{', '}{long.toFixed(4)} | <a target="_blank" rel="noopener" href={`https://www.google.com/maps/@${lat},${long},15z`}>View Location on Map</a></div>)}
