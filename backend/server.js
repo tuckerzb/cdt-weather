@@ -72,7 +72,7 @@ dotenv.config();
         }).then(response => {
             console.log(response.response.status);
             res.status(200).json(response.data.properties.periods);
-        }, error => res.status(503).json({message: 'We are currently experiencing an issue communicating with the National Weather Service servers. Please try again later'})
+        }, error => res.json({message: 'We are currently experiencing an issue communicating with the National Weather Service servers. Please try again later'})
         );
     })
 
