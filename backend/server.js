@@ -76,7 +76,7 @@ dotenv.config();
             } else {
                 res.status(200).json(response.data.properties.periods);
             }
-        }, error => console.log(error));
+        }, error => console.log(`Error`));
     })
 
     app.post('/api/sendMessage', (req, res) => {
