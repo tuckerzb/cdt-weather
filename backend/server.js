@@ -70,9 +70,8 @@ dotenv.config();
                 'Accept': 'application/geo+json'
             }
         }).then(response => {
-            console.log(response.response.status);
             res.status(200).json(response.data.properties.periods);
-        }, error => res.json({message: 'We are currently experiencing an issue communicating with the National Weather Service servers. Please try again later'})
+        }, error => res.json({message: 'We are currently experiencing an issue communicating with the National Weather Service servers. Please try again later'}).status(500)
         );
     })
 
