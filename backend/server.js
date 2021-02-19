@@ -37,25 +37,18 @@ dotenv.config();
     })
 
     app.get('/api/getForecastFromLocation', (req, res) => {
+
+    
         axios({
-            method: 'GET',
-            url: `https://api.weather.gov/points/${req.query.lat},${req.query.long}`,
-            headers: {
-                'User-Agent': '(myweatherapp.com, contact@myweatherapp.com)',
-                'Accept': 'application/geo+json'
-            }
-        }).then(response => {
-            axios({
                 method: 'GET',
-                url: response.data.properties.forecast,
+                url: `https://api.weather.gov/points/${req.query.lat},${req.query.long}/forecast`,
                 headers: {
                     'User-Agent': '(myweatherapp.com, contact@myweatherapp.com)',
                     'Accept': 'application/geo+json'
                 }
             }).then(response => {
                 res.status(200).json(response.data.properties.periods);
-            }, error => res.json({message: 'We are currently experiencing an issue communicating with the National Weather Service servers at this location. Please try again later'}).status(500));
-        }, error => res.json({message: 'We are currently experiencing an issue communicating with the National Weather Service servers at this location. Please try again later'}).status(500));
+            }, error => res.json({message: 'We are currently experiencing an issue communicating with the National Weather Service servers at this location. Please try again later'}).status(500))
     })
 
     app.get('/api/getForecastFromLandmark', (req, res) => {
