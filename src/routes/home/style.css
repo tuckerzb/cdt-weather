@@ -18,6 +18,19 @@
 	color: black;
 }
 
+.messageBlock {
+	background-color: lightcoral;
+	border-radius: 5px;
+	padding-left: 1rem;
+	padding-bottom: .25rem;
+	padding-top: .25rem;
+	padding-right: 1rem;
+	color: #000;
+	font-weight: 700;;
+
+	margin: 1rem 0;
+}
+
 .locationButton {
 	width: auto;
 	font-size: 1rem;
