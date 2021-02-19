@@ -71,12 +71,9 @@ dotenv.config();
             }
         }).then(response => {
             console.log(response.response.status);
-            if (!response.data.properties.periods) {
-                res.status(503).json({message: 'We are currently experiencing an issue communicating with the National Weather Service service. Please try again later'});
-            } else {
-                res.status(200).json(response.data.properties.periods);
-            }
-        }, error => console.log(`Error`));
+            res.status(200).json(response.data.properties.periods);
+        }, error => res.status(503).json({message: 'We are currently experiencing an issue communicating with the National Weather Service servers. Please try again later'})
+        );
     })
 
     app.post('/api/sendMessage', (req, res) => {
