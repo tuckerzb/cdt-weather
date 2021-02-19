@@ -65,7 +65,7 @@ const Contact = () => {
 			</div>
 			<div>
 				<label for='botcheck'><strong>Bot Check: Select the CDT Terminus Country</strong></label>
-				<select value={botCheck} id='botcheck' onChange={(e) => setBotCheck(e.target.value)}>
+				<select value={botCheck} id='botcheck' class={style.botCheck} onChange={(e) => setBotCheck(e.target.value)}>
 					<option value=''>Please Select</option>
 					<option value='costarica'>Costa Rica</option>
 					<option value='russia'>Russia</option>
