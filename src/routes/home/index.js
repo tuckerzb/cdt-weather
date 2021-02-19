@@ -30,6 +30,7 @@ const Home = () => {
 		setSelectValue('');
 		setForecastData([]);
 		setLoading(true);
+		setError('');
 		navigator.geolocation.getCurrentPosition(position => {
 			setLat(position.coords.latitude);
 			setLong(position.coords.longitude);
@@ -39,8 +40,13 @@ const Home = () => {
 				method: 'GET',
 				url: `https://cdt-weather-backend.herokuapp.com/api/getForecastFromLocation?lat=${position.coords.latitude}&long=${position.coords.longitude}`,
 			}).then(response => {
-				setLoading(false);
-				setForecastData(response.data);
+				if (response.data.message) {
+					setError(response.data.message);
+					setLoading(false);
+				} else {
+					setLoading(false);
+					setForecastData(response.data);	
+				}
 			}, error => console.log(error));
 		}, error => console.log(error));
 	}

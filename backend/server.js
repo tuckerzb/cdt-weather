@@ -54,8 +54,8 @@ dotenv.config();
                 }
             }).then(response => {
                 res.status(200).json(response.data.properties.periods);
-            }, error => console.log(error));
-        }, error => console.log(error));
+            }, error => res.json({message: 'We are currently experiencing an issue communicating with the National Weather Service servers at this location. Please try again later'}).status(500));
+        }, error => res.json({message: 'We are currently experiencing an issue communicating with the National Weather Service servers at this location. Please try again later'}).status(500));
     })
 
     app.get('/api/getForecastFromLandmark', (req, res) => {
@@ -71,7 +71,7 @@ dotenv.config();
             }
         }).then(response => {
             res.status(200).json(response.data.properties.periods);
-        }, error => res.json({message: 'We are currently experiencing an issue communicating with the National Weather Service servers. Please try again later'}).status(500)
+        }, error => res.json({message: 'We are currently experiencing an issue communicating with the National Weather Service servers at this location. Please try again later'}).status(500)
         );
     })
 
