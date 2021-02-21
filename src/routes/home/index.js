@@ -88,7 +88,7 @@ const Home = () => {
 		<div class={style.headerBlock}>
 		<h1>Welcome to CDT Weather</h1>
 		<p>The <a href='https://continentaldividetrail.org/'>Continental Divide Trail</a> is a 2,700+ mile path through the Rocky Mountains and along the Continental Divide. </p>
-		<p>To get the 7-day National Weather Service forecast, click "Get My Location" or select the closest landmark to you from the dropdown.</p>
+		<p>To get the 7-day National Weather Service forecast, click "Get My Location" or select the closest landmark to you from the dropdown. Please note that the information is provided "as-is" from the National Weather Service and no warranty is made as to its accuracy.</p>
 		</div>
 		<button class={style.locationButton} onClick={getLocationHandler}>Get My Location</button> <strong>OR</strong>{' '}
 		<select value={selectValue} name='landmark' id='landmark' onChange={getForecastFromLandmark}>
