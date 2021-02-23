@@ -23,7 +23,7 @@ dotenv.config();
             method: 'GET',
             url: `https://api.weather.gov/points/${req.query.coord.split(',')[0]},${req.query.coord.split(',')[1]}`,
             headers: {
-                'User-Agent': '(myweatherapp.com, contact@myweatherapp.com)',
+                'User-Agent': '(cdtweather.com, admin@cdtweather.com)',
                 'Accept': 'application/geo+json'
             }
         }).then(response => {
@@ -43,7 +43,7 @@ dotenv.config();
                 method: 'GET',
                 url: `https://api.weather.gov/points/${req.query.lat},${req.query.long}/forecast`,
                 headers: {
-                    'User-Agent': '(myweatherapp.com, contact@myweatherapp.com)',
+                    'User-Agent': '(cdtweather.com, admin@cdtweather.com)',
                     'Accept': 'application/geo+json'
                 }
             }).then(response => {
@@ -59,7 +59,7 @@ dotenv.config();
             method: 'GET',
             url: `https://api.weather.gov/gridpoints/${gridID}/${gridX},${gridY}/forecast`,
             headers: {
-                'User-Agent': '(myweatherapp.com, contact@myweatherapp.com)',
+                'User-Agent': '(cdtweather.com, admin@cdtweather.com)',
                 'Accept': 'application/geo+json'
             }
         }).then(response => {
