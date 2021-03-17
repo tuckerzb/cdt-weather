@@ -90,7 +90,7 @@ const Home = () => {
 		<h1>Welcome to CDT Weather</h1>
 		<p>The <a href='https://continentaldividetrail.org/'>Continental Divide Trail</a> is a 2,700+ mile path through the Rocky Mountains and along the Continental Divide. </p>
 		<p>To get the 7-day National Weather Service forecast, click "Get My Location" or select the closest landmark to you from the dropdown. Sometimes we are unable to communicate with the NWS servers for a forecast region, if you receive an error message, please try again later.</p>
-		<p><em>Have a location on the trail that you'd like to see added to the landmarks dropdown?</em> Please use suggest it using this form: <Link href="/suggest">Suggest a Landmark</Link></p>
+		<p><em>Have a location on the trail that you'd like to see added to the landmarks dropdown?</em> Please suggest it using this form: <Link href="/suggest">Suggest a Landmark</Link></p>
 		<p><strong>Disclaimer:</strong> Please note that the information is provided "as-is" from the National Weather Service and no warranty is made as to its accuracy.</p>
 		</div>
 		<button class={style.locationButton} onClick={getLocationHandler}>Get My Location</button> <strong>OR</strong>{' '}
