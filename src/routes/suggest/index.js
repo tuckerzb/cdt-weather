@@ -45,7 +45,8 @@ const Suggest = () => {
 	return (<div class={style.container}>
 		<div class={style.headerBlock}>
 			<h1>Suggest a Landmark</h1>
-			<p>Is there a location on/near the CDT that you feel is important and should be saved as a landmark on CDTWeather? Include the name and general location (or lat/long if you have it!) below! Thank you!</p>
+			<p>Is there a location on/near the CDT that you feel is important and should be saved as a landmark on CDTWeather? Include the name and general location (or lat/long if you have it!) below!</p>
+            <p>Thank you!</p>
 		</div>
 		{response && <div class={style.messageBlock}>{response}</div>}
 		{error && <div class={style.errorBlock}>{error}</div>}
