@@ -43,6 +43,7 @@ const Home = () => {
 			}).then(response => {
 				if (response.data.message) {
 					// Workaround May 2021: Re-submit for one more try if error returned
+					console.log(`Error Returned, trying a 2nd time`);
 					axios({
 						method: 'GET',
 						url: `https://cdt-weather-backend.herokuapp.com/api/getForecastFromLocation?lat=${position.coords.latitude}&long=${position.coords.longitude}`,
@@ -83,8 +84,20 @@ const Home = () => {
 			url: `https://cdt-weather-backend.herokuapp.com/api/getForecastFromLandmark?id=${e.target.value}`,
 		}).then(response => {
 			if (response.data.message) {
-				setError(response.data.message);
-				setLoading(false);
+				console.log(`Error Returned, trying a 2nd time`);
+				// Workaround May 2021: submit once more if error returned
+				axios({
+					method: 'GET',
+					url: `https://cdt-weather-backend.herokuapp.com/api/getForecastFromLandmark?id=${e.target.value}`,
+				}).then(response2 => {
+					if (response2.data.message) {
+						setError(response2.data.message);
+						setLoading(false);
+					} else {
+						setLoading(false);
+						setForecastData(response2.data);
+					}
+				}, error => console.log(error));
 			} else {
 				setLoading(false);
 				setForecastData(response.data);	
