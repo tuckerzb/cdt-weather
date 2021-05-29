@@ -12,7 +12,7 @@ const Tools = () => {
         setInputValue('');
 		axios({
 			method: 'GET',
-			url: `http://localhost:5000/api/getSelectFormat?coord=${inputValue}`,
+			url: `https://cdt-weather-backend.herokuapp.com/api/getSelectFormat?coord=${inputValue}`,
 		}).then(response => {
 			setSelectFormat(response.data.result || response.data.error);
 		}, error => console.log(error));

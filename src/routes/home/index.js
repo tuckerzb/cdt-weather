@@ -138,7 +138,7 @@ const Home = () => {
 			<option value="co">-- Colorado --</option>
 			<option value='PUB,25,13,37.018021,-106.450204'>Cumbres Pass/S End of Great Divide Alt</option>
 			<option value='PUB,21,43,37.670368,-106.642975'>South Fork, CO</option>
-			<option value='PUB,31,43,37.678692,-106.351883'>Del Norte, CO</option>
+			{/* <option value='PUB,31,43,37.678692,-106.351883'>Del Norte, CO</option> */}
 			<option value='PUB,14,35,37.482979,-106.802231'>Wolf Creek Pass/Highway 160</option>
 			<option value='PUB,11,39,37.564049,-106.906403'>S End of Creede Cutoff</option>
 			<option value='PUB,11,52,37.849442,-106.926109'>Creede, CO</option>
