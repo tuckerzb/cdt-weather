@@ -112,7 +112,7 @@ const Home = () => {
 	return (<div class={style.container}>
 		<div class={style.headerBlock}>
 		<h1>Welcome to CDT Weather</h1>
-		<p>The <a href='https://continentaldividetrail.org/'>Continental Divide Trail</a> is a 2,700+ mile path through the Rocky Mountains and along the Continental Divide. </p>
+		<p>The <a href='https://continentaldividetrail.org/'>Continental Divide Trail</a> is a ~3,100 mile path through the Rocky Mountains and along the Continental Divide. </p>
 		<p>To get the 7-day National Weather Service forecast, click "Get My Location" or select the closest landmark to you from the dropdown. Sometimes we are unable to communicate with the NWS servers for a forecast region, if you receive an error message, please try again later.</p>
 		<p><em>Have a location on the trail that you'd like to see added to the landmarks dropdown?</em> Please suggest it using this form: <Link href="/suggest">Suggest a Landmark</Link></p>
 		<p><strong>Disclaimer:</strong> Please note that the information is provided "as-is" from the National Weather Service and no warranty is made as to its accuracy.</p>
@@ -215,7 +215,7 @@ const Home = () => {
 		{error && <div class={style.messageBlock}>{error}</div>}
 		{loading && (<><br /><Loader /></>)}
 		<div class={style.forecastBlock}>
-		{forecastData.length !== 0 && (<div class={style.forecastFor}><strong>Forecast For:</strong> {lat.toFixed(4)}{', '}{long.toFixed(4)} | <a target="_blank" rel="noopener" href={`https://www.google.com/maps/@${lat},${long},15z`}>View Location on Map</a></div>)}
+		{forecastData.length !== 0 && (<div class={style.forecastFor}><strong>Forecast For:</strong> {lat.toFixed(4)}{', '}{long.toFixed(4)} | <a target="_blank" rel="noopener" href={`https://www.google.com/maps/@${lat},${long},15z`}>View on Map</a></div>)}
 		{forecastData && forecastData.map(item => (
 			<div class={style.forecastItem}>
 			{item.name}
