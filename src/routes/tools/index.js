@@ -10,6 +10,7 @@ const Tools = () => {
 	const getSelectFormat = () => {
         // Coord format: lat,long (no space between)
         setInputValue('');
+		setSelectFormat('');
 		axios({
 			method: 'GET',
 			url: `https://cdt-weather-backend.herokuapp.com/api/getSelectFormat?coord=${inputValue}`,

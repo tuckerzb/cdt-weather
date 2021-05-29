@@ -137,11 +137,14 @@ const Home = () => {
 			<option value="PUB,25,12,36.993870,-106.457108">NM/CO BORDER</option>
 			<option value="co">-- Colorado --</option>
 			<option value='PUB,25,13,37.018021,-106.450204'>Cumbres Pass/S End of Great Divide Alt</option>
-			<option value='PUB,21,43,37.670368,-106.642975'>South Fork, CO</option>
+			<option value='PUB,19,31,37.404713,-106.6446'>Elwood Pass</option>
+			<option value='PUB,17,33,37.444672,-106.708572'>Bonito Pass</option>
+			{/* <option value='PUB,21,43,37.670368,-106.642975'>South Fork, CO</option> */}
 			{/* <option value='PUB,31,43,37.678692,-106.351883'>Del Norte, CO</option> */}
 			<option value='PUB,14,35,37.482979,-106.802231'>Wolf Creek Pass/Highway 160</option>
 			<option value='PUB,11,39,37.564049,-106.906403'>S End of Creede Cutoff</option>
 			<option value='PUB,11,52,37.849442,-106.926109'>Creede, CO</option>
+			<option value='GJT,124,40,37.77145,-107.558327'>Silverton Access (MM 927.6 NOBO)</option>
 			<option value='GJT,138,46,37.940151,-107.158997'>Spring Creek Pass/Highway 149</option>
 			<option value='PUB,23,65,38.161350,-106.620598'>N End of Great Divide Alt</option>
 			<option value='GJT,170,68,38.496201,-106.324982'>Monarch Pass/Highway 50</option>
