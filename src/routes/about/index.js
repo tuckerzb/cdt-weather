@@ -17,6 +17,7 @@ const About = () => (
 			</p>
 			<ul>
 				<li>Ahjah "Roger That" Boise (April 2021)</li>
+				<li>Jeremy Barnett (August 2021)</li>
 			</ul>
 
 		</div>
